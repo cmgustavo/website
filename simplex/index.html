@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Simplex</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+  <form id="payment_form" method="post">
+    <input type="hidden" name="version" value="1">
+    <input type="hidden" name="partner" id="partner">
+    <input type="hidden" name="payment_flow_type" value="wallet">
+    <input type="hidden" name="return_url_success" id="return_url_success">
+    <input type="hidden" name="return_url_fail" id="return_url_fail">
+    <input type="hidden" name="quote_id" id="quote_id">
+    <input type="hidden" name="payment_id" id="payment_id">
+    <input type="hidden" name="user_id" id="user_id">
+    <input type="hidden" name="destination_wallet[address]" id="destination_wallet_address">
+    <input type="hidden" name="destination_wallet[currency]" id="destination_wallet_currency">
+    <input type="hidden" name="fiat_total_amount[amount]" id="fiat_total_amount_amount">
+    <input type="hidden" name="fiat_total_amount[currency]" id="fiat_total_amount_currency">
+    <input type="hidden" name="digital_total_amount[amount]" id="digital_total_amount_amount">
+    <input type="hidden" name="digital_total_amount[currency]" id="digital_total_amount_currency">
+  </form>
+
+  <script type="text/javascript">
+    setTimeout(function() {
+      document.forms["payment_form"].submit();
+    }, 200);
+</script>
+
+</body>
+
+<script charset="utf-8">
+function querySt(ji) {
+
+    hu = window.location.search.substring(1);
+    gy = hu.split("&");
+
+    for (i=0;i<gy.length;i++) {
+        ft = gy[i].split("=");
+        if (decodeURIComponent(ft[0]) == ji) {
+            return ft[1];
+        }
+    }
+}
+
+var api_host  = querySt("api_host");
+document.getElementById('payment_form').action = api_host;
+
+var partner = querySt("partner");
+document.getElementById('partner').value = partner;
+
+var return_url_success = querySt("return_url_success");
+document.getElementById('return_url_success').value = return_url_success;
+
+var return_url_fail = querySt("return_url_fail");
+document.getElementById('return_url_fail').value = return_url_fail;
+
+var quote_id = querySt("quote_id");
+document.getElementById('quote_id').value = quote_id;
+
+var payment_id = querySt("payment_id");
+document.getElementById('payment_id').value = payment_id;
+
+var user_id = querySt("user_id");
+document.getElementById('user_id').value = user_id;
+
+var destination_wallet_address = querySt("destination_wallet[address]");
+document.getElementById('destination_wallet_address').value = destination_wallet_address;
+
+var destination_wallet_currency = querySt("destination_wallet[currency]");
+document.getElementById('destination_wallet_currency').value = destination_wallet_currency;
+
+var fiat_total_amount_amount = querySt("fiat_total_amount[amount]");
+document.getElementById('fiat_total_amount_amount').value = fiat_total_amount_amount;
+
+var fiat_total_amount_currency = querySt("fiat_total_amount[currency]");
+document.getElementById('fiat_total_amount_currency').value = fiat_total_amount_currency;
+
+var digital_total_amount_amount = querySt("digital_total_amount[amount]");
+document.getElementById('digital_total_amount_amount').value = digital_total_amount_amount;
+
+var digital_total_amount_currency = querySt("digital_total_amount[currency]");
+document.getElementById('digital_total_amount_currency').value = digital_total_amount_currency;
+
+  </script>
+
+</html>
