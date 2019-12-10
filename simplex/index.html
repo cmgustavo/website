@@ -59,16 +59,16 @@ function querySt(ji) {
 }
 
 var api_host  = querySt("api_host");
-document.getElementById('payment_form').action = api_host;
+document.getElementById('payment_form').action = decodeURIComponent(api_host);
 
 var partner = querySt("partner");
 document.getElementById('partner').value = partner;
 
 var return_url_success = querySt("return_url_success");
-document.getElementById('return_url_success').value = return_url_success;
+document.getElementById('return_url_success').value = decodeURIComponent(return_url_success);
 
 var return_url_fail = querySt("return_url_fail");
-document.getElementById('return_url_fail').value = return_url_fail;
+document.getElementById('return_url_fail').value = decodeURIComponent(return_url_fail);
 
 var quote_id = querySt("quote_id");
 document.getElementById('quote_id').value = quote_id;
