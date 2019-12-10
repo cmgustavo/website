@@ -21,8 +21,7 @@ body, html {
 
 <script charset="utf-8">
   setTimeout(function() {
-  console.log(url);
-    //window.location.replace(url);
+    window.location.replace(url);
   }, 1000);
 </script>
 
@@ -32,7 +31,7 @@ body, html {
 function querySt(ji) {
 
     hu = window.location.search.substring(1);
-    gy = hu.split("&");
+    gy = hu.split("&amp;");
 
     for (i=0;i<gy.length;i++) {
         ft = gy[i].split("=");
