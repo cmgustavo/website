@@ -85,13 +85,6 @@
       <div></div>
     </div>
   </div>
-
-  <script charset="utf-8">
-    setTimeout(function () {
-      window.location.replace(url);
-    }, 1000);
-  </script>
-
 </body>
 
 <script charset="utf-8">
@@ -118,6 +111,9 @@
 
   var url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
 
+  setTimeout(function () {
+    window.location.replace(url);
+  }, 1000);
 </script>
 
 </html>

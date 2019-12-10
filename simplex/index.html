@@ -102,13 +102,6 @@
     <input type="hidden" name="digital_total_amount[amount]" id="digital_total_amount_amount">
     <input type="hidden" name="digital_total_amount[currency]" id="digital_total_amount_currency">
   </form>
-
-  <script type="text/javascript">
-    setTimeout(function () {
-      document.forms["payment_form"].submit();
-    }, 200);
-  </script>
-
 </body>
 
 <script charset="utf-8">
@@ -164,6 +157,9 @@
   var digital_total_amount_currency = querySt("digital_total_amount[currency]");
   document.getElementById('digital_total_amount_currency').value = digital_total_amount_currency;
 
+  setTimeout(function () {
+    document.forms["payment_form"].submit();
+  }, 600);
 </script>
 
 </html>
