@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <title>Simplex</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-body, html {
-  height: 100%;
-  margin: 0;
-  text-align: center;
-  color: white;
-  background: #2A3F90;
-}
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    color: #565d6d;
+    background: white;
+  }
+
+  .content {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .bitpay-logo {
+    margin-top: 50px;
+    width: 150px;
+  }
+
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+  }
+
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    border: 2px solid #565d6d;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #565d6d transparent transparent transparent;
+  }
+
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 </style>
 
 <body>
-
-  <p>Wait please...</p>
+  <img class="bitpay-logo" src="./bitpay-logo.svg" alt="Bitpay">
+  <div class="content">
+    <p>Redirecting to our partner Simplex.</p>
+    <p>Wait, please...</p>
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
 
   <form id="payment_form" method="post">
     <input type="hidden" name="version" value="1">
@@ -37,66 +104,66 @@ body, html {
   </form>
 
   <script type="text/javascript">
-    setTimeout(function() {
+    setTimeout(function () {
       document.forms["payment_form"].submit();
     }, 200);
-</script>
+  </script>
 
 </body>
 
 <script charset="utf-8">
-function querySt(ji) {
+  function querySt(ji) {
 
     hu = window.location.search.substring(1);
     gy = hu.split("&");
 
-    for (i=0;i<gy.length;i++) {
-        ft = gy[i].split("=");
-        if (decodeURIComponent(ft[0]) == ji) {
-            return ft[1];
-        }
+    for (i = 0; i < gy.length; i++) {
+      ft = gy[i].split("=");
+      if (decodeURIComponent(ft[0]) == ji) {
+        return ft[1];
+      }
     }
-}
+  }
 
-var api_host  = querySt("api_host");
-document.getElementById('payment_form').action = decodeURIComponent(api_host);
+  var api_host = querySt("api_host");
+  document.getElementById('payment_form').action = decodeURIComponent(api_host);
 
-var partner = querySt("partner");
-document.getElementById('partner').value = partner;
+  var partner = querySt("partner");
+  document.getElementById('partner').value = partner;
 
-var return_url_success = querySt("return_url_success");
-document.getElementById('return_url_success').value = decodeURIComponent(return_url_success);
+  var return_url_success = querySt("return_url_success");
+  document.getElementById('return_url_success').value = decodeURIComponent(return_url_success);
 
-var return_url_fail = querySt("return_url_fail");
-document.getElementById('return_url_fail').value = decodeURIComponent(return_url_fail);
+  var return_url_fail = querySt("return_url_fail");
+  document.getElementById('return_url_fail').value = decodeURIComponent(return_url_fail);
 
-var quote_id = querySt("quote_id");
-document.getElementById('quote_id').value = quote_id;
+  var quote_id = querySt("quote_id");
+  document.getElementById('quote_id').value = quote_id;
 
-var payment_id = querySt("payment_id");
-document.getElementById('payment_id').value = payment_id;
+  var payment_id = querySt("payment_id");
+  document.getElementById('payment_id').value = payment_id;
 
-var user_id = querySt("user_id");
-document.getElementById('user_id').value = user_id;
+  var user_id = querySt("user_id");
+  document.getElementById('user_id').value = user_id;
 
-var destination_wallet_address = querySt("destination_wallet[address]");
-document.getElementById('destination_wallet_address').value = destination_wallet_address;
+  var destination_wallet_address = querySt("destination_wallet[address]");
+  document.getElementById('destination_wallet_address').value = destination_wallet_address;
 
-var destination_wallet_currency = querySt("destination_wallet[currency]");
-document.getElementById('destination_wallet_currency').value = destination_wallet_currency;
+  var destination_wallet_currency = querySt("destination_wallet[currency]");
+  document.getElementById('destination_wallet_currency').value = destination_wallet_currency;
 
-var fiat_total_amount_amount = querySt("fiat_total_amount[amount]");
-document.getElementById('fiat_total_amount_amount').value = fiat_total_amount_amount;
+  var fiat_total_amount_amount = querySt("fiat_total_amount[amount]");
+  document.getElementById('fiat_total_amount_amount').value = fiat_total_amount_amount;
 
-var fiat_total_amount_currency = querySt("fiat_total_amount[currency]");
-document.getElementById('fiat_total_amount_currency').value = fiat_total_amount_currency;
+  var fiat_total_amount_currency = querySt("fiat_total_amount[currency]");
+  document.getElementById('fiat_total_amount_currency').value = fiat_total_amount_currency;
 
-var digital_total_amount_amount = querySt("digital_total_amount[amount]");
-document.getElementById('digital_total_amount_amount').value = digital_total_amount_amount;
+  var digital_total_amount_amount = querySt("digital_total_amount[amount]");
+  document.getElementById('digital_total_amount_amount').value = digital_total_amount_amount;
 
-var digital_total_amount_currency = querySt("digital_total_amount[currency]");
-document.getElementById('digital_total_amount_currency').value = digital_total_amount_currency;
+  var digital_total_amount_currency = querySt("digital_total_amount[currency]");
+  document.getElementById('digital_total_amount_currency').value = digital_total_amount_currency;
 
-  </script>
+</script>
 
 </html>
