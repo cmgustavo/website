@@ -88,7 +88,6 @@
 
   <script charset="utf-8">
     setTimeout(function () {
-      alert(url);
       window.location.replace(url);
     }, 1000);
   </script>
@@ -117,7 +116,7 @@
   var userId = querySt("userId");
   var returnApp = querySt("returnApp");
 
-  var url = returnApp + ':simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
+  var url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
 
 </script>
 
