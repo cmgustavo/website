@@ -49,8 +49,7 @@ var quoteId = querySt("quoteId");
 var userId = querySt("userId");
 var returnApp = querySt("returnApp");
 
-var url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
-console.log('[end.html:48]',url); /* TODO */
+var url = encodeURIComponent(returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId);
 
   </script>
 
