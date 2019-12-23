@@ -3,13 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Test</title>
+  <title>BitPay / Copay - Testnet</title>
 </head>
 
 <body>
 
-  <h3>Payment URL's <small>BIP 21
+  <h3>Bitcoin URL's
+    <small>
       <a href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki" target="_blank">
+        BIP 21
+      </a>
+    </small>
   </h3>
   <ul class="no-bullet">
     <li>
@@ -18,12 +22,12 @@
       </a>
     </li>
     <li>
-      <a href="bitcoin:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?amount=0.001">
+      <a href="bitcoin:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?amount=0.0001">
         bitcoin:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?amount=0.001
       </a>
     </li>
     <li>
-      <a href="bitcoin:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?amount=0.002&message=Donation%20for%20project%20xyz">
+      <a href="bitcoin:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?amount=0.0002&message=Donation%20for%20project%20xyz">
         bitcoin:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?amount=0.002&message=Donation%20for%20project%20xyz
       </a>
     </li>
@@ -32,12 +36,28 @@
   <h3>BitPay URL's</h3>
   <ul class="no-bullet">
     <li>
-      <a href="bitpay:3CMCRgEm8HVz3DrWaCCid3vAANE42jcEv9?coin=btc&amount=5&message=hi">
-        bitpay:3CMCRgEm8HVz3DrWaCCid3vAANE42jcEv9?coin=btc&amount=5&message=hi
+      <a href="bitpay:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?coin=btc&amount=0.0001&message=hi">
+        bitpay:mq8Hc2XwYqXw4sPTc8i7wPx9iJzTFTBWbQ?coin=btc&amount=0.0001&message=hi
       </a>
     </li>
   </ul>
 
+  <h3>Payment Protocol
+    <small>
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki" target="_blank">
+        BIP 72
+      </a> -
+      <a href="https://github.com/bitcoin/bips/blob/master/bip-0073.mediawiki" target="_blank">
+        BIP 73
+      </a>
+    </small>
+  </h3>
+  <form action="https://test.bitpay.com/checkout" method="post">
+    <input type="hidden" name="action" value="checkout" />
+    <input type="hidden" name="posData" value="" />
+    <input type="hidden" name="data" value="wN4HC8bsSbAsaWlz+7rhQwZFqf4syEwXZgVCuC1MFfK6prqHx+Lou1rbshajg3wW4puiYPg4BS8/si4YltIUS1KR104ak/ATl634t8FmctU=" />
+    <input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit" style="width: 210px" alt="BitPay, the easy way to pay with bitcoins.">
+  </form>
 
 </body>
 
