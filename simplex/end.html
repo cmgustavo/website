@@ -88,6 +88,7 @@
 </body>
 
 <script charset="utf-8">
+  var url;
   function querySt(ji) {
 
     hu = window.location.search.substring(1);
@@ -101,19 +102,34 @@
     }
   }
 
-  var success = querySt("success");
-  document.getElementById('success').innerHTML = success == 'true' ? 'Success!' : 'Operation failed';
+  function setParams() {
+    var success = querySt("success");
+    document.getElementById('success').innerHTML = success == 'true' ? 'Success!' : 'Operation failed';
 
-  var paymentId = querySt("paymentId");
-  var quoteId = querySt("quoteId");
-  var userId = querySt("userId");
-  var returnApp = querySt("returnApp");
+    var paymentId = querySt("paymentId");
+    var quoteId = querySt("quoteId");
+    var userId = querySt("userId");
+    var returnApp = querySt("returnApp");
 
-  var url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
+    url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
+  }
 
-  setTimeout(function () {
-    window.location.replace(url);
-  }, 1000);
+  function redir() {
+    setTimeout(() => {
+      setParams();
+      setTimeout(() => {
+        try {
+          window.location.replace(url);
+        } catch (error) {
+          setTimeout(() => {
+            redir();
+          }, 4000);
+        }
+      }, 2000);
+    }, 1000);
+  }
+
+  redir();
 </script>
 
 </html>
