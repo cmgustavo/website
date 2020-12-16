@@ -118,67 +118,48 @@
     }
   }
 
-  function createFrom() {
-    var api_host = querySt("api_host");
-    document.getElementById('payment_form').action = decodeURIComponent(api_host);
+  var api_host = querySt("api_host");
+  document.getElementById('payment_form').action = decodeURIComponent(api_host);
 
-    var partner = querySt("partner");
-    document.getElementById('partner').value = partner;
+  var partner = querySt("partner");
+  document.getElementById('partner').value = partner;
 
-    var return_url_success = querySt("return_url_success");
-    document.getElementById('return_url_success').value = decodeURIComponent(return_url_success);
+  var return_url_success = querySt("return_url_success");
+  document.getElementById('return_url_success').value = decodeURIComponent(return_url_success);
 
-    var return_url_fail = querySt("return_url_fail");
-    document.getElementById('return_url_fail').value = decodeURIComponent(return_url_fail);
+  var return_url_fail = querySt("return_url_fail");
+  document.getElementById('return_url_fail').value = decodeURIComponent(return_url_fail);
 
-    var quote_id = querySt("quote_id");
-    document.getElementById('quote_id').value = quote_id;
+  var quote_id = querySt("quote_id");
+  document.getElementById('quote_id').value = quote_id;
 
-    var payment_id = querySt("payment_id");
-    document.getElementById('payment_id').value = payment_id;
+  var payment_id = querySt("payment_id");
+  document.getElementById('payment_id').value = payment_id;
 
-    var user_id = querySt("user_id");
-    document.getElementById('user_id').value = user_id;
+  var user_id = querySt("user_id");
+  document.getElementById('user_id').value = user_id;
 
-    var destination_wallet_address = querySt("destination_wallet[address]");
-    document.getElementById('destination_wallet_address').value = destination_wallet_address;
+  var destination_wallet_address = querySt("destination_wallet[address]");
+  document.getElementById('destination_wallet_address').value = destination_wallet_address;
 
-    var destination_wallet_currency = querySt("destination_wallet[currency]");
-    document.getElementById('destination_wallet_currency').value = destination_wallet_currency;
+  var destination_wallet_currency = querySt("destination_wallet[currency]");
+  document.getElementById('destination_wallet_currency').value = destination_wallet_currency;
 
-    var fiat_total_amount_amount = querySt("fiat_total_amount[amount]");
-    document.getElementById('fiat_total_amount_amount').value = fiat_total_amount_amount;
+  var fiat_total_amount_amount = querySt("fiat_total_amount[amount]");
+  document.getElementById('fiat_total_amount_amount').value = fiat_total_amount_amount;
 
-    var fiat_total_amount_currency = querySt("fiat_total_amount[currency]");
-    document.getElementById('fiat_total_amount_currency').value = fiat_total_amount_currency;
+  var fiat_total_amount_currency = querySt("fiat_total_amount[currency]");
+  document.getElementById('fiat_total_amount_currency').value = fiat_total_amount_currency;
 
-    var digital_total_amount_amount = querySt("digital_total_amount[amount]");
-    document.getElementById('digital_total_amount_amount').value = digital_total_amount_amount;
+  var digital_total_amount_amount = querySt("digital_total_amount[amount]");
+  document.getElementById('digital_total_amount_amount').value = digital_total_amount_amount;
 
-    var digital_total_amount_currency = querySt("digital_total_amount[currency]");
-    document.getElementById('digital_total_amount_currency').value = digital_total_amount_currency;
-  }
+  var digital_total_amount_currency = querySt("digital_total_amount[currency]");
+  document.getElementById('digital_total_amount_currency').value = digital_total_amount_currency;
 
-  function submit() {
+  setTimeout(function () {
     document.forms["payment_form"].submit();
-  }
-
-  function doSubmit() {
-    setTimeout(() => {
-      createFrom();
-      setTimeout(() => {
-        try {
-          submit();
-        } catch (error) {
-          setTimeout(() => {
-            doSubmit();
-          }, 2000);
-        }
-      }, 500);
-    }, 1000);
-  }
-
-  doSubmit();
+  }, 600);
 </script>
 
 </html>

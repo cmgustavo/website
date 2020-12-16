@@ -88,7 +88,6 @@
 </body>
 
 <script charset="utf-8">
-  var url;
   function querySt(ji) {
 
     hu = window.location.search.substring(1);
@@ -102,34 +101,19 @@
     }
   }
 
-  function setParams() {
-    var success = querySt("success");
-    document.getElementById('success').innerHTML = success == 'true' ? 'Success!' : 'Operation failed';
+  var success = querySt("success");
+  document.getElementById('success').innerHTML = success == 'true' ? 'Success!' : 'Operation failed';
 
-    var paymentId = querySt("paymentId");
-    var quoteId = querySt("quoteId");
-    var userId = querySt("userId");
-    var returnApp = querySt("returnApp");
+  var paymentId = querySt("paymentId");
+  var quoteId = querySt("quoteId");
+  var userId = querySt("userId");
+  var returnApp = querySt("returnApp");
 
-    url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
-  }
+  var url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
 
-  function redir() {
-    setTimeout(() => {
-      setParams();
-      setTimeout(() => {
-        try {
-          window.location.replace(url);
-        } catch (error) {
-          setTimeout(() => {
-            redir();
-          }, 4000);
-        }
-      }, 2000);
-    }, 1000);
-  }
-
-  redir();
+  setTimeout(function () {
+    window.location.replace(url);
+  }, 1000);
 </script>
 
 </html>
