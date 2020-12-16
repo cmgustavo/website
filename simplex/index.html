@@ -170,9 +170,7 @@
         try {
           submit();
         } catch (error) {
-          setTimeout(() => {
-            doSubmit();
-          }, 2000);
+          console.log('Error trying submit(): ', error);
         }
       }, 500);
     }, 1000);
