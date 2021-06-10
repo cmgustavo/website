@@ -85,10 +85,6 @@
       <div></div>
     </div>
   </div>
-
-  <form id="payment_form" method="get" action="bitpay://coinbase">
-    <input type="hidden" name="code" id="code">
-  </form>
 </body>
 
 <script charset="utf-8">
@@ -105,23 +101,14 @@
     }
   }
 
-  function createFrom() {
-    var code = querySt("code");
-    document.getElementById('code').action = decodeURIComponent(code);
-  }
-
-  function submit() {
-    document.forms["payment_form"].submit();
-  }
-
   function doSubmit() {
     setTimeout(() => {
-      createFrom();
+      var code = querySt("code");
       setTimeout(() => {
         try {
-          submit();
+          window.location = "bitpay://coinbase?code=" + code;
         } catch (error) {
-          console.log('Error trying submit(): ', error);
+          console.log('Error trying redirect: ', error);
         }
       }, 500);
     }, 1000);
