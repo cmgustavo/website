@@ -104,9 +104,10 @@
   function doSubmit() {
     setTimeout(() => {
       var code = querySt("code");
+      var state = querySt("state");
       setTimeout(() => {
         try {
-          window.location = "bitpay://coinbase?code=" + code;
+          window.location = "bitpay://coinbase?code=" + code + "&state=" + state;
         } catch (error) {
           console.log('Error trying redirect: ', error);
         }
