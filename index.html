@@ -22,7 +22,7 @@
     <!--start header-->
     <div id="banner">
     <h1>BitPay / Copay</h1>
-    <p>Links and buttons for testing BitPay App</p>
+    <p>Links and buttons only for testing BitPay App</p>
 
     <!-- menu -->
     <!--
@@ -35,35 +35,6 @@
     <!-- end menu -->
     </div>
     <!--end of header-->
-    <!--start sidebar-->
-    <div id="sidebar">
-      <h2>About</h2>
-      <p>Only for testing purpose</p>
-      <h2>BitPay</h2>
-      <ul class="no-bullet">
-        <li><a href="https://github.com/bitpay/bitpay-app"
-            target="_blank">BitPay App</a></li>
-        <li><a href="https://bitpay.com" target="_blank">BitPay.com</a></li>
-        <li><a href="https://test.bitpay.com" target="_blank">Test</a></li>
-      </ul>
-      <h2>Bitcoin Improvement Proposal</h2>
-      <ul>
-        <li><a
-            href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki"
-            target="_blank">BIP 21</a></li>
-        <li>
-          <a
-            href="https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki"
-            target="_blank">BIP 72</a></li>
-        <li>
-          <a
-            href="https://github.com/bitcoin/bips/blob/master/bip-0073.mediawiki"
-            target="_blank">BIP 73</a></li>
-      </ul>
-    </div>
-    <div class="clear"></div>
-    <!--end of sidebar-->
-
     <!--start containter-->
     <div id="container">
 
@@ -71,7 +42,7 @@
       <div id="content">
         <!--post item-->
         <div class="item">
-          <h1>Basic Payments BIP 21</h1>
+          <h1>Basic Payments <small><a href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki" target="_blank">BIP 21</a></small></h1>
           <h3>Bitcoin</h3>
           <ul class="no-bullet">
             <li>
@@ -126,7 +97,14 @@
         </div>
         <!--another post item-->
         <div class="item">
-          <h1>Payment Protocol BIP72-73</h1>
+          <h1>Payment Protocol <small>
+            <a
+              href="https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki"
+              target="_blank">BIP 72</a> and
+            <a
+              href="https://github.com/bitcoin/bips/blob/master/bip-0073.mediawiki"
+              target="_blank">BIP 73</a>
+          </small></h1>
 
           <h3>Create invoice for 1 USD</h3>
           <form action="https://test.bitpay.com/checkout?universalMode=true" method="post">
@@ -146,8 +124,21 @@
         </div>
 
         <div class="item">
+          <h1>Gift Cards</h1>
+          <h2>Deep Links to shop online</h2>
+          <h3>Category Screen</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="bitpay://shoponline?category=charities%20%26%20nonprofits">
+                bitpay://shoponline?category=charities%20%26%20nonprofits
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
           <h1>Appsflyer (OneLink)</h1>
-          <h2>Deep Dynamic Links (social-to-app link)</h2>
+          <h2>Dynamic Links (social-to-app link)</h2>
           <h3>About</h3>
           <ul class="no-bullet">
             <li>
