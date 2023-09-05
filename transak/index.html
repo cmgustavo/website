@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Transak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    color: #565d6d;
+    background: white;
+  }
+
+  .content {
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .bitpay-logo {
+    margin-top: 50px;
+    width: 150px;
+  }
+
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 25px;
+    height: 25px;
+  }
+
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 2px;
+    border: 2px solid #565d6d;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #565d6d transparent transparent transparent;
+  }
+
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<body>
+  <img class="bitpay-logo" src="./bitpay-logo.svg" alt="Bitpay">
+  <div class="content">
+    <p>Redirecting to the BitPay App.</p>
+    <p>Wait, please...</p>
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+
+<script charset="utf-8">
+  var url = 'bitpay://transak' + window.location.search;
+
+  function redir() {
+    setTimeout(() => {
+      try {
+        window.location.replace(url);
+      } catch (error) {
+        console.log('Error trying redirect: ', error);
+      }
+    }, 3000);
+  }
+
+  redir();
+</script>
+
+</html>
