@@ -104,15 +104,21 @@
   }
 
   function setParams() {
-    var success = querySt("success");
-    document.getElementById('success').innerHTML = success == 'true' ? 'Success!' : 'Operation failed';
+    var returnApp = querySt("returnApp") ?? 'bitpay';
+    var flow = querySt("flow");
 
-    var paymentId = querySt("paymentId");
-    var quoteId = querySt("quoteId");
-    var userId = querySt("userId");
-    var returnApp = querySt("returnApp");
+    if (flow === 'sell') {
+      url = returnApp + '://simplex' + window.location.search;
+    } else {
+      var success = querySt("success");
+      document.getElementById('success').innerHTML = success == 'true' ? 'Success!' : 'Operation failed';
 
-    url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
+      var paymentId = querySt("paymentId");
+      var quoteId = querySt("quoteId");
+      var userId = querySt("userId");
+
+      url = returnApp + '://simplex?success=' + success + '&paymentId=' + paymentId + '&quoteId=' + quoteId + '&userId=' + userId;
+    }
   }
 
   function redir() {
