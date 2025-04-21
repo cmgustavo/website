@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<!-- Add ARIA landmarks where appropriate -->
 <!--start wrapper-->
 <div id="wrapper">
 
@@ -21,18 +22,18 @@
 
     <!--start header-->
     <div id="banner">
-    <h1>BitPay / Copay</h1>
-    <p>Links and buttons only for testing BitPay App</p>
+      <h1 class="title" role="heading" aria-level="1">BitPay</h1>
+      <p>Links and buttons only for testing BitPay App</p>
 
-    <!-- menu -->
-    <!--
-    <label for="show-menu" class="responsive">&#9776;</label>
-    <input type="checkbox" id="show-menu" role="button">
-    <ul id="topnav">
-      <li><a class="active">Home</a></li>
-    </ul>
-    -->
-    <!-- end menu -->
+      <!-- menu -->
+      <!--
+      <label for="show-menu" class="responsive">&#9776;</label>
+      <input type="checkbox" id="show-menu" role="button">
+      <ul id="topnav">
+        <li><a class="active">Home</a></li>
+      </ul>
+      -->
+      <!-- end menu -->
     </div>
     <!--end of header-->
     <!--start containter-->
@@ -42,7 +43,8 @@
       <div id="content">
         <!--post item-->
         <div class="item">
-          <h1>Basic Payments <small><a href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki" target="_blank">BIP 21</a></small></h1>
+          <h2>Basic Payments <small><a href="https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki"
+                                       target="_blank">BIP 21</a></small></h2>
           <h3>Bitcoin</h3>
           <ul class="no-bullet">
             <li>
@@ -75,7 +77,8 @@
               </a>
             </li>
             <li>
-              <a href="litecoin:n2NfwwQer5YoPoyYxha6sUGSuMcSiyCzAE?amount=0.0002&message=Donation%20for%20project%20xyz">
+              <a
+                href="litecoin:n2NfwwQer5YoPoyYxha6sUGSuMcSiyCzAE?amount=0.0002&message=Donation%20for%20project%20xyz">
                 litecoin:n2NfwwQer5YoPoyYxha6sUGSuMcSiyCzAE?amount=0.002&message=Donation%20for%20project%20xyz
               </a>
             </li>
@@ -102,223 +105,161 @@
         </div>
         <!--another post item-->
         <div class="item">
-          <h1>Payment Protocol <small>
+          <h2>Payment Protocol <small>
             <a
               href="https://github.com/bitcoin/bips/blob/master/bip-0072.mediawiki"
               target="_blank">BIP 72</a> and
             <a
               href="https://github.com/bitcoin/bips/blob/master/bip-0073.mediawiki"
               target="_blank">BIP 73</a>
-          </small></h1>
+          </small></h2>
 
           <h3>Create invoice for 1 USD</h3>
           <form action="https://test.bitpay.com/checkout?universalMode=true" method="post">
-            <input type="hidden" name="action" value="checkout" />
-            <input type="hidden" name="posData" value="" />
-            <input type="hidden" name="data" value="wN4HC8bsSbAsaWlz+7rhQwZFqf4syEwXZgVCuC1MFfIXbtMh0DShDsPJWM93/9ZQumtXrzLn6Q1Rt3OilhU5N1Zh0mgAIVhEnhT3Lln+cnV2ezl33Y3SaHoQwziAiakAtkW4Le/TlwghpRLxJQtQxI+FSdDWL2gbhhAEmjCQIYg=" />
-            <input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit" style="width: 146px" alt="BitPay, the easy way to pay with bitcoins.">
+            <input type="hidden" name="action" value="checkout"/>
+            <input type="hidden" name="posData" value=""/>
+            <input type="hidden" name="data"
+                   value="wN4HC8bsSbAsaWlz+7rhQwZFqf4syEwXZgVCuC1MFfIXbtMh0DShDsPJWM93/9ZQumtXrzLn6Q1Rt3OilhU5N1Zh0mgAIVhEnhT3Lln+cnV2ezl33Y3SaHoQwziAiakAtkW4Le/TlwghpRLxJQtQxI+FSdDWL2gbhhAEmjCQIYg="/>
+            <input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit"
+                   style="width: 146px" alt="BitPay, the easy way to pay with bitcoins.">
           </form>
 
           <h3>Create invoice for 10 USD</h3>
           <form action="https://test.bitpay.com/checkout" method="post">
-            <input type="hidden" name="action" value="checkout" />
-            <input type="hidden" name="posData" value="" />
-            <input type="hidden" name="data" value="wN4HC8bsSbAsaWlz+7rhQwZFqf4syEwXZgVCuC1MFfIXbtMh0DShDsPJWM93/9ZQCmv6+xRWaU4dCuRfefF8t/t2UzWAgsZBZOwG9sq0PcvJNwI+QEKqdqrcGp6lxU89kYfzRX2kj8afECbSItVuE8v0LQ2Wu3xsKoRLL+FJ914=" />
-            <input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit" style="width: 146px" alt="BitPay, the easy way to pay with bitcoins.">
+            <input type="hidden" name="action" value="checkout"/>
+            <input type="hidden" name="posData" value=""/>
+            <input type="hidden" name="data"
+                   value="wN4HC8bsSbAsaWlz+7rhQwZFqf4syEwXZgVCuC1MFfIXbtMh0DShDsPJWM93/9ZQCmv6+xRWaU4dCuRfefF8t/t2UzWAgsZBZOwG9sq0PcvJNwI+QEKqdqrcGp6lxU89kYfzRX2kj8afECbSItVuE8v0LQ2Wu3xsKoRLL+FJ914="/>
+            <input type="image" src="https://test.bitpay.com/cdn/en_US/bp-btn-pay-currencies.svg" name="submit"
+                   style="width: 146px" alt="BitPay, the easy way to pay with bitcoins.">
           </form>
         </div>
 
         <div class="item">
-          <h1>Gift Cards</h1>
-          <h2>Deep Links to shop online</h2>
-          <h3>Category Screen</h3>
+          <h2>Appsflyer (OneLink)</h2>
+          <h3>Open Debug Screen</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="https://bitpay.onelink.me/Cenw/thawwukx">
+                Short link
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://bitpay.onelink.me/Cenw?af_xp=custom&pid=Dev%20Test%20Media%20Source&c=Dev%20Test%20Debug&deep_link_value=bitpay%3A%2F%2Fdebug%2FTestingDeepLink">
+                Long link
+              </a>
+            </li>
+          </ul>
+          <h3>Open Card Activate</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="https://bitpay.onelink.me/Cenw/g9h5m74h">
+                Short link
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://bitpay.onelink.me/Cenw?af_xp=social&pid=Dev%20Test%20Media%20Source&c=Dev%20Test%20Campaign&af_dp=bitpay%3A%2F%2Fhome&deep_link_value=bitpay%3A%2F%2Fcard%2Factivate">
+                Long link
+              </a>
+            </li>
+          </ul>
+          <h3>Open Other Screen</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="https://bitpay.onelink.me/Cenw/thawwukx">
+                Short link
+              </a>
+            </li>
+          </ul>
+          <h3>Open Zenledger</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="https://bitpay.onelink.me/Cenw/554nhp8w">
+                https://bitpay.onelink.me/Cenw/554nhp8w
+              </a>
+            </li>
+          </ul>
+          <h3>Example: Buy Crypto</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="https://bitpay.onelink.me/Cenw/34b7d8ko">
+                Buy crypto (BTC $100)
+              </a>
+            </li>
+          </ul>
+          <h3>Open Bill Pay</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="https://bitpay.onelink.me/Cenw/741iawkm">
+                https://bitpay.onelink.me/Cenw/741iawkm
+                Bill Pay
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h2>DeepLinks</h2>
+          <h3>Reown (WalletConnect)</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="bitpay://connections/walletconnect">
+                bitpay://connections/walletconnect
+              </a>
+            </li>
+          </ul>
+          <h3>Zenledger</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="bitpay://connections/zenledger">
+                bitpay://connections/zenledger
+              </a>
+            </li>
+          </ul>
+          <h3>Buy Crypto</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="bitpay://buyCrypto?partner=moonpay&coin=usdc&chain=eth&amount=100">
+                bitpay://buyCrypto?partner=moonpay&coin=usdc&chain=eth&amount=100
+              </a>
+            </li>
+            <li>
+              <a href="bitpay://buyCrypto?partner=ramp&coin=btc&amount=200">
+                bitpay://buyCrypto?partner=ramp&coin=btc&amount=200
+              </a>
+            </li>
+            <li>
+              <a href="bitpay://buyCrypto?partner=simplex">
+                bitpay://buyCrypto?partner=simplex
+              </a>
+            </li>
+            <li>
+              <a href="bitpay://buyCrypto?partner=wyre&amount=500">
+                bitpay://buyCrypto?partner=wyre&amount=500
+              </a>
+            </li>
+            <li>
+              <a href="bitpay://buy-crypto?currencyAbbreviation=btc&amount=100">
+                bitpay://buy-crypto?currencyAbbreviation=btc&amount=100
+              </a>
+            </li>
+          </ul>
+          <h3>Bill Pay</h3>
+          <ul class="no-bullet">
+            <li>
+              <a href="bitpay://billpay">
+                bitpay://billpay
+              </a>
+            </li>
+          </ul>
+          <h3>Gift Cards</h3>
           <ul class="no-bullet">
             <li>
               <a href="bitpay://shoponline?category=charities%20%26%20nonprofits">
                 bitpay://shoponline?category=charities%20%26%20nonprofits
               </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h1>Appsflyer (OneLink)</h1>
-          <h2>Dynamic Links (custom link)</h2>
-          <h3>Debug</h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="https://bitpay.onelink.me/Cenw/thawwukx">
-                https://bitpay.onelink.me/Cenw/thawwukx
-              </a>
-            </li>
-            <li>
-              <a href="https://bitpay.onelink.me/Cenw?af_xp=custom&pid=Dev%20Test%20Media%20Source&c=Dev%20Test%20Debug&deep_link_value=bitpay%3A%2F%2Fdebug%2FTestingDeepLink">
-                https://bitpay.onelink.me/Cenw?af_xp=custom&pid=Dev%20Test%20Media%20Source&c=Dev%20Test%20Debug&deep_link_value=bitpay%3A%2F%2Fdebug%2FTestingDeepLink
-              </a>
-            </li>
-          </ul>
-          <h3>Card Activate</h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="https://bitpay.onelink.me/Cenw/g9h5m74h">
-                https://bitpay.onelink.me/Cenw/g9h5m74h
-              </a>
-            </li>
-            <li>
-              <a href="https://bitpay.onelink.me/Cenw?af_xp=social&pid=Dev%20Test%20Media%20Source&c=Dev%20Test%20Campaign&af_dp=bitpay%3A%2F%2Fhome&deep_link_value=bitpay%3A%2F%2Fcard%2Factivate">
-                https://bitpay.onelink.me/Cenw?af_xp=social&pid=Dev%20Test%20Media%20Source&c=Dev%20Test%20Campaign&af_dp=bitpay%3A%2F%2Fhome&deep_link_value=bitpay%3A%2F%2Fcard%2Factivate
-              </a>
-            </li>
-          </ul>
-          <h3>Other</h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="https://bitpay.onelink.me/Cenw/thawwukx">
-                https://bitpay.onelink.me/Cenw/thawwukx
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h1>Firebase</h1>
-          <h3>Debug Dynamic Links (open AboutPage) </h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="https://bitpayapp.page.link/aF8A">
-                Short link: Open BitPay App
-              </a>
-            </li>
-            <li>
-              <a href="https://bitpayapp.page.link/?link=https://bitpay.com/wallet?view%3DAboutPage&apn=com.bitpay.wallet&isi=1149581638&ibi=com.bitpay.wallet">
-                Long link: Open BitPay App
-              </a>
-            </li>
-          </ul>
-
-          <h2>Debug Dynamic Links (Card) </h2>
-          <ul class="no-bullet">
-            <li>
-              <a href="https://bitpayapp.page.link/NcYR">
-                Short link: Open BitPay App
-              </a>
-            </li>
-            <li>
-              <a href="https://bitpayapp.page.link/?link=https://bitpay.com/card?view%3DBitPayCardIntroPage&apn=com.bitpay.wallet&isi=1149581638&ibi=com.bitpay.wallet">
-                Long link: Open BitPay App
-              </a>
-            </li>
-          </ul>
-
-          <h3>Debug Dynamic Links (open ChangellyPage) </h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="https://bitpayapp.page.link/qjER">
-                Short link: Open BitPay App
-              </a>
-            </li>
-            <li>
-              <a href="https://bitpayapp.page.link/?link=https://bitpay.com/?view%3DChangellyPage&apn=com.bitpay.wallet&isi=1149581638&ibi=com.bitpay.wallet">
-                Long link: Open BitPay App
-              </a>
-            </li>
-          </ul>
-
-          <h3>Debug Dynamic Links (no params) </h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="https://bitpayapp.page.link/wozR">
-                Short link: Open BitPay App
-              </a>
-            </li>
-            <li>
-              <a href="https://bitpayapp.page.link/?link=https://bitpay.com&apn=com.bitpay.wallet&isi=1149581638&ibi=com.bitpay.wallet">
-                Long link: Open BitPay App
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h1>Wallet Connect</h1>
-          <h3>Uniswap</h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="copay://wc?uri=wc:00e46b69-d0cc-4b3e-b6a2-cee442f97188@1?bridge=https%3A%2F%2Fbridge.walletconnect.org&key=91303dedf64285cbbaf9120f6e9d160a5c8aa3deb67017a3874cd272323f48ae
-                       ">
-                Open Copay App
-              </a>
-            </li>
-            <li>
-              <a href="bitpay://wc?uri=wc:00e46b69-d0cc-4b3e-b6a2-cee442f97188@1?bridge=https%3A%2F%2Fbridge.walletconnect.org&key=91303dedf64285cbbaf9120f6e9d160a5c8aa3deb67017a3874cd272323f48ae
-                       ">
-                Open BitPay App
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h1>Buy Crypto</h1>
-          <h3>Deeplinks</h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="bitpay://buyCrypto?partner=moonpay&coin=usdc&chain=eth&amount=100">
-                Example 1
-              </a>
-            </li>
-            <li>
-              <a href="bitpay://buyCrypto?partner=ramp&coin=btc&amount=200">
-                Example 2
-              </a>
-            </li>
-            <li>
-              <a href="bitpay://buyCrypto?partner=simplex">
-                Example 3
-              </a>
-            </li>
-            <li>
-              <a href="bitpay://buyCrypto?partner=wyre&amount=500">
-                Example 4
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h1>Zenledger</h1>
-          <h3>Deeplinks</h3>
-          <ul class="no-bullet">
-            <li>
-              <a href="bitpay://connections/zenledger">
-                Example 1
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="item">
-          <h1>Other links</h1>
-          <h3>Onelink and deeplink</h3>
-          <ul class="no-bullet">
-            <li><a href="https://bitpay.onelink.me/Cenw/554nhp8w">Zenledger</a>
-              <ul>
-                <li><a href="bitpay://connections/zenledger">Deeplink</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="no-bullet">
-            <li><a href="https://bitpay.onelink.me/Cenw/34b7d8ko">Buy crypto (BTC $100)</a>
-              <ul>
-                <li><a href="bitpay://buy-crypto?currencyAbbreviation=btc&amount=100">Deeplink</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="no-bullet">
-            <li><a href="https://bitpay.onelink.me/Cenw/741iawkm">Bill Pay</a>
-              <ul>
-                <li><a href="bitpay://billpay">Deeplink</a></li>
-              </ul>
             </li>
           </ul>
         </div>
@@ -333,8 +274,8 @@
 
   <!--start footer-->
   <div id="footer">
-    <span class="left">2022 &copy;</span>
-    <span class="right"><a href="https://github.com/cmgustavo/">GitHub</a></span>
+    <span class="left"><a href="https://bitpay.com">BitPay</a></span>
+    <span class="right"><a href="https://github.com/cmgustavo">GitHub</a></span>
   </div>
   <!--end of footer-->
 
@@ -344,7 +285,9 @@
 <!--start credits-->
 <!--//Under CC-NC 3.0, this portion must be left intact and must not be hidden.//-->
 <div id="credits">
-  <span><a href="http://www.mlpdesign.net" title="CSS &amp; HTML by MLP Design.net">CSS &amp; HTML</a> by MLP Design<br />Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0</a>.</span>
+  <span><a href="http://www.mlpdesign.net"
+           title="CSS &amp; HTML by MLP Design.net">CSS &amp; HTML</a> by MLP Design<br/>Licensed under <a rel="license"
+                                                                                                           href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0</a>.</span>
 </div>
 <!--end of credits-->
 
